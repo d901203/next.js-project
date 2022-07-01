@@ -2,7 +2,7 @@ import FiveChart from '../components/FiveChart';
 
 const Home = (props) => {
   const hour = new Date().getHours().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
-  if (hour >= 0 && hour <= 5) return (
+  if (hour >= '0' && hour <= '5') return (
     <div>
       <p>Loading Chart</p>
     </div>
