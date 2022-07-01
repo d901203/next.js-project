@@ -1,6 +1,12 @@
 import FiveChart from '../components/FiveChart';
 
 const Home = (props) => {
+  const hour = new Date().getHours();
+  if (hour >= 0 && hour <= 5) return (
+    <div>
+      <p>Loading Chart</p>
+    </div>
+  );
   return (
     <div>
       <FiveChart {...props.res} />
