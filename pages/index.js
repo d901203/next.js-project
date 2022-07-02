@@ -1,8 +1,7 @@
 import FiveChart from '../components/FiveChart';
 
 const Home = (props) => {
-  const hour = Number(new Date().getHours().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' }));
-  if (hour >= 0 && hour <= 5) {
+  if (props.res.notification.actionType === 'EA2000') {
     return (
       <div>
         <p>Loading Chart</p>
@@ -21,8 +20,9 @@ const Home = (props) => {
 
 export const getServerSideProps = async () => {
   const api = 'https://m2.melon.com/chart/hourly/fiveChartGraph.json?v=4.0';
-  const res = await fetch(api).then(res => res.json());
-  return { props: { res: res } };
+  const result = await fetch(api);
+  const res = await result.json();
+  return { props: { res } };
 }
 
 export default Home;
