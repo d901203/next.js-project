@@ -1,17 +1,23 @@
 import FiveChart from '../components/FiveChart';
+import FiveChartTable from '../components/FiveChartTable';
 
 const Home = (props) => {
   const hour = new Date().getHours().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
-  if (Number(hour) >= 0 && Number(hour) <= 5) return (
-    <div>
-      <p>Loading Chart</p>
-    </div>
-  );
-  return (
-    <div>
-      <FiveChart {...props.res} />
-    </div>
-  );
+  if (Number(hour) >= 0 && Number(hour) <= 5) {
+    return (
+      <div>
+        <p>Loading Chart</p>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <div>
+          <FiveChart {...props.res} />
+        </div>
+      </div>
+    );
+  }
 }
 
 export const getServerSideProps = async () => {
