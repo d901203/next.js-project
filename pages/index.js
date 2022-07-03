@@ -1,7 +1,7 @@
 import FiveChart from '../components/FiveChart';
 
-const Home = (props) => {
-  if (props.res.notification.actionType === 'EA2000') {
+const Home = ({ res }) => {
+  if (!('response' in res)) {
     return (
       <div>
         <p>Loading Chart</p>
@@ -11,7 +11,7 @@ const Home = (props) => {
     return (
       <div>
         <div>
-          <FiveChart {...props.res} />
+          <FiveChart {...res} />
         </div>
       </div>
     );
