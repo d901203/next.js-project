@@ -14,7 +14,7 @@ const Home = ({ res }) => {
         <div className='col-8'>
           <FiveChart {...res} />
         </div>
-        <div className='col-8'>
+        <div className='col-10'>
           <FiveChartTable {...res} />
         </div>
       </div >
