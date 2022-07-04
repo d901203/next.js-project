@@ -1,4 +1,5 @@
 import FiveChart from '../components/FiveChart';
+import FiveChartTable from '../components/FiveChartTable';
 
 const Home = ({ res }) => {
   if (!('response' in res)) {
@@ -9,11 +10,14 @@ const Home = ({ res }) => {
     );
   } else {
     return (
-      <div>
-        <div>
+      <div className='row justify-content-center'>
+        <div className='col-8'>
           <FiveChart {...res} />
         </div>
-      </div>
+        <div className='col-8'>
+          <FiveChartTable {...res} />
+        </div>
+      </div >
     );
   }
 }
