@@ -1,5 +1,3 @@
-
-
 const FiveChartTable = (props) => {
     const N1 = props.response.GRAPHDATALIST[0].GRAPHDATA.slice(1);
     const N2 = props.response.GRAPHDATALIST[1].GRAPHDATA.slice(1);
